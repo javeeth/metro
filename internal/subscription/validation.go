@@ -136,6 +136,8 @@ func GetValidatedModelForCreate(ctx context.Context, req *metrov1.Subscription) 
 		return nil, merror.Newf(merror.InvalidArgument, err.Error())
 	}
 
+	m.EnableMessageOrdering = req.EnableMessageOrdering
+
 	return m, nil
 }
 
